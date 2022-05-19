@@ -1,0 +1,10 @@
+# Set a cron job that executes the script health_check.py
+# every 60 seconds and sends health status to the respective user.
+# In order for cron_file to work, you need to modifiy the health_check.py.
+# line 34
+  # receiver = "{}@example.com".format(os.environ["USER"])
+# to
+  # receiver = "{user-name}@example.com"
+# {user-name} is the username provided by your Qwiklabs session
+
+* * * * * /home/{user-name}/health_check.py
